@@ -24,16 +24,17 @@ message OrderResp {
 }
 
 message Card{
-  uint64 Id =1;
-  uint64 orderId=2;
-  string numbers =3;
-  string period =4;
+  uint64 Id = 1;
+  uint64 orderId = 2;
+  string numbers = 3;
+  string period = 4;
+  uint64 playerId = 5;
 }
 message CardResp{
-  repeated Card data =1;
+  repeated Card data = 1;
 }
 message CardPeriodReq{
-  string period =1;
+  string period = 1;
 }
 
 service Order {
