@@ -24,7 +24,10 @@ message OrderResp {
 }
 
 message Card{
-  uint64 orderId=1;
+  uint64 Id =1;
+  uint64 orderId=2;
+  string numbers =3;
+  string period =4;
 }
 message CardResp{
   repeated Card data =1;
