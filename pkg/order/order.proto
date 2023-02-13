@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package order;
+option go_package = ".;order";
+
+
+message OrderS {
+  uint64 id = 1;
+  string period = 2;
+  int32 cardNumber = 3;
+  uint64 playerId = 4;
+}
+
+message OrderIdsReq {
+  repeated uint64 ids = 1;
+}
+message OrderPeriodReq {
+  string period = 1;
+}
+
+
+message OrderResp {
+  repeated OrderS data = 1;
+}
+
+message Card{
+  uint64 orderId=1;
+}
+message CardResp{
+  repeated Card data =1;
+}
+message CardPeriodReq{
+  string period =1;
+}
+
+service Order {
+  rpc GetOrdersByIds (OrderIdsReq) returns (OrderResp);
+  rpc GetOrdersByPeriod(OrderPeriodReq) returns (OrderResp);
+  rpc GetCardsByPeriod(CardPeriodReq) returns(CardResp);
+}
+
