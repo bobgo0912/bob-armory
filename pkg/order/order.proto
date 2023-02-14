@@ -36,10 +36,16 @@ message CardResp{
 message CardPeriodReq{
   string period = 1;
 }
-
+message CardsIdsReq{
+  string period = 1;
+}
+message CardsIdsResp{
+  repeated uint64 ids = 1;
+}
 service Order {
   rpc GetOrdersByIds (OrderIdsReq) returns (OrderResp);
   rpc GetOrdersByPeriod(OrderPeriodReq) returns (OrderResp);
   rpc GetCardsByPeriod(CardPeriodReq) returns(CardResp);
+  rpc GetUnSettleCardsIdsByPeriod(CardsIdsReq) returns (CardsIdsResp);
 }
 

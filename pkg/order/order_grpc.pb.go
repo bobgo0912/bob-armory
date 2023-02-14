@@ -25,6 +25,7 @@ type OrderClient interface {
 	GetOrdersByIds(ctx context.Context, in *OrderIdsReq, opts ...grpc.CallOption) (*OrderResp, error)
 	GetOrdersByPeriod(ctx context.Context, in *OrderPeriodReq, opts ...grpc.CallOption) (*OrderResp, error)
 	GetCardsByPeriod(ctx context.Context, in *CardPeriodReq, opts ...grpc.CallOption) (*CardResp, error)
+	GetUnSettleCardsIdsByPeriod(ctx context.Context, in *CardsIdsReq, opts ...grpc.CallOption) (*CardsIdsResp, error)
 }
 
 type orderClient struct {
@@ -62,6 +63,15 @@ func (c *orderClient) GetCardsByPeriod(ctx context.Context, in *CardPeriodReq, o
 	return out, nil
 }
 
+func (c *orderClient) GetUnSettleCardsIdsByPeriod(ctx context.Context, in *CardsIdsReq, opts ...grpc.CallOption) (*CardsIdsResp, error) {
+	out := new(CardsIdsResp)
+	err := c.cc.Invoke(ctx, "/order.Order/GetUnSettleCardsIdsByPeriod", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OrderServer is the server API for Order service.
 // All implementations must embed UnimplementedOrderServer
 // for forward compatibility
@@ -69,6 +79,7 @@ type OrderServer interface {
 	GetOrdersByIds(context.Context, *OrderIdsReq) (*OrderResp, error)
 	GetOrdersByPeriod(context.Context, *OrderPeriodReq) (*OrderResp, error)
 	GetCardsByPeriod(context.Context, *CardPeriodReq) (*CardResp, error)
+	GetUnSettleCardsIdsByPeriod(context.Context, *CardsIdsReq) (*CardsIdsResp, error)
 	mustEmbedUnimplementedOrderServer()
 }
 
@@ -84,6 +95,9 @@ func (UnimplementedOrderServer) GetOrdersByPeriod(context.Context, *OrderPeriodR
 }
 func (UnimplementedOrderServer) GetCardsByPeriod(context.Context, *CardPeriodReq) (*CardResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCardsByPeriod not implemented")
+}
+func (UnimplementedOrderServer) GetUnSettleCardsIdsByPeriod(context.Context, *CardsIdsReq) (*CardsIdsResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetUnSettleCardsIdsByPeriod not implemented")
 }
 func (UnimplementedOrderServer) mustEmbedUnimplementedOrderServer() {}
 
@@ -152,6 +166,24 @@ func _Order_GetCardsByPeriod_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Order_GetUnSettleCardsIdsByPeriod_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CardsIdsReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OrderServer).GetUnSettleCardsIdsByPeriod(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/order.Order/GetUnSettleCardsIdsByPeriod",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OrderServer).GetUnSettleCardsIdsByPeriod(ctx, req.(*CardsIdsReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Order_ServiceDesc is the grpc.ServiceDesc for Order service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +202,10 @@ var Order_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCardsByPeriod",
 			Handler:    _Order_GetCardsByPeriod_Handler,
+		},
+		{
+			MethodName: "GetUnSettleCardsIdsByPeriod",
+			Handler:    _Order_GetUnSettleCardsIdsByPeriod_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
