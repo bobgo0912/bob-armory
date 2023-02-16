@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package wallet;
+option go_package = ".;wallet";
+
+
+message SettleData{
+  uint64 playerId = 1;
+  int32 type = 2;
+  uint64 amount = 3;
+  string period = 4;
+  uint64 orderId = 5;
+  uint64 cardId = 6;
+}
+
+message  SettleReq{
+  repeated SettleData datas = 1;
+}
+
+message SettleResp{
+  uint32 status = 1;
+  repeated uint64 Ids = 2;
+}
+
+message SettleCancelReq{
+  repeated uint64 Ids=1;
+}
+
+message SettleCancelResp{
+  uint32 status = 1;
+}
+
+message SettleConfirmReq{
+  repeated uint64 Ids=1;
+}
+
+message SettleConfirmResp{
+  uint32 status = 1;
+}
+
+service Wallet {
+  rpc SettleHandle (SettleReq) returns (SettleResp);
+  rpc SettleCancel(SettleCancelReq) returns (SettleCancelResp);
+  rpc SettleConfirm(SettleConfirmReq) returns (SettleConfirmResp);
+}
+
