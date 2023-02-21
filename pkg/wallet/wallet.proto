@@ -23,7 +23,7 @@ message SettleResp{
 }
 
 message SettleCancelReq{
-  repeated uint64 Ids=1;
+  repeated uint64 Ids = 1;
 }
 
 message SettleCancelResp{
@@ -31,16 +31,45 @@ message SettleCancelResp{
 }
 
 message SettleConfirmReq{
-  repeated uint64 Ids=1;
+  repeated uint64 Ids = 1;
 }
 
 message SettleConfirmResp{
   uint32 status = 1;
 }
 
+message BalanceReq{
+  uint64 playerId = 1;
+}
+message BalanceResp{
+  uint64 amount = 1;
+}
+message DepositReq{
+  uint64 playerId = 1;
+  uint64 amount = 2;
+  string desc = 3;
+  int32 type = 4;
+}
+message DepositResp{
+ uint32 status=1;
+}
+message WithdrawalReq{
+  uint64 playerId = 1;
+  uint64 amount = 2;
+  string desc = 3;
+  int32 type = 4;
+}
+message WithdrawalResp{
+  uint32 status=1;
+}
+
 service Wallet {
   rpc SettleHandle (SettleReq) returns (SettleResp);
   rpc SettleCancel(SettleCancelReq) returns (SettleCancelResp);
   rpc SettleConfirm(SettleConfirmReq) returns (SettleConfirmResp);
+
+  rpc Balance(BalanceReq) returns(BalanceResp);
+  rpc Deposit(DepositReq) returns(DepositResp);
+  rpc Withdrawal(WithdrawalReq) returns(WithdrawalResp);
 }
 

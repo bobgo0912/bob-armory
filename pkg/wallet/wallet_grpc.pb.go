@@ -25,6 +25,9 @@ type WalletClient interface {
 	SettleHandle(ctx context.Context, in *SettleReq, opts ...grpc.CallOption) (*SettleResp, error)
 	SettleCancel(ctx context.Context, in *SettleCancelReq, opts ...grpc.CallOption) (*SettleCancelResp, error)
 	SettleConfirm(ctx context.Context, in *SettleConfirmReq, opts ...grpc.CallOption) (*SettleConfirmResp, error)
+	Balance(ctx context.Context, in *BalanceReq, opts ...grpc.CallOption) (*BalanceResp, error)
+	Deposit(ctx context.Context, in *DepositReq, opts ...grpc.CallOption) (*DepositResp, error)
+	Withdrawal(ctx context.Context, in *WithdrawalReq, opts ...grpc.CallOption) (*WithdrawalResp, error)
 }
 
 type walletClient struct {
@@ -62,6 +65,33 @@ func (c *walletClient) SettleConfirm(ctx context.Context, in *SettleConfirmReq, 
 	return out, nil
 }
 
+func (c *walletClient) Balance(ctx context.Context, in *BalanceReq, opts ...grpc.CallOption) (*BalanceResp, error) {
+	out := new(BalanceResp)
+	err := c.cc.Invoke(ctx, "/wallet.Wallet/Balance", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *walletClient) Deposit(ctx context.Context, in *DepositReq, opts ...grpc.CallOption) (*DepositResp, error) {
+	out := new(DepositResp)
+	err := c.cc.Invoke(ctx, "/wallet.Wallet/Deposit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *walletClient) Withdrawal(ctx context.Context, in *WithdrawalReq, opts ...grpc.CallOption) (*WithdrawalResp, error) {
+	out := new(WithdrawalResp)
+	err := c.cc.Invoke(ctx, "/wallet.Wallet/Withdrawal", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // WalletServer is the server API for Wallet service.
 // All implementations must embed UnimplementedWalletServer
 // for forward compatibility
@@ -69,6 +99,9 @@ type WalletServer interface {
 	SettleHandle(context.Context, *SettleReq) (*SettleResp, error)
 	SettleCancel(context.Context, *SettleCancelReq) (*SettleCancelResp, error)
 	SettleConfirm(context.Context, *SettleConfirmReq) (*SettleConfirmResp, error)
+	Balance(context.Context, *BalanceReq) (*BalanceResp, error)
+	Deposit(context.Context, *DepositReq) (*DepositResp, error)
+	Withdrawal(context.Context, *WithdrawalReq) (*WithdrawalResp, error)
 	mustEmbedUnimplementedWalletServer()
 }
 
@@ -84,6 +117,15 @@ func (UnimplementedWalletServer) SettleCancel(context.Context, *SettleCancelReq)
 }
 func (UnimplementedWalletServer) SettleConfirm(context.Context, *SettleConfirmReq) (*SettleConfirmResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SettleConfirm not implemented")
+}
+func (UnimplementedWalletServer) Balance(context.Context, *BalanceReq) (*BalanceResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Balance not implemented")
+}
+func (UnimplementedWalletServer) Deposit(context.Context, *DepositReq) (*DepositResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Deposit not implemented")
+}
+func (UnimplementedWalletServer) Withdrawal(context.Context, *WithdrawalReq) (*WithdrawalResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Withdrawal not implemented")
 }
 func (UnimplementedWalletServer) mustEmbedUnimplementedWalletServer() {}
 
@@ -152,6 +194,60 @@ func _Wallet_SettleConfirm_Handler(srv interface{}, ctx context.Context, dec fun
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Wallet_Balance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(BalanceReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WalletServer).Balance(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wallet.Wallet/Balance",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WalletServer).Balance(ctx, req.(*BalanceReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Wallet_Deposit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DepositReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WalletServer).Deposit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wallet.Wallet/Deposit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WalletServer).Deposit(ctx, req.(*DepositReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Wallet_Withdrawal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WithdrawalReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WalletServer).Withdrawal(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/wallet.Wallet/Withdrawal",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WalletServer).Withdrawal(ctx, req.(*WithdrawalReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Wallet_ServiceDesc is the grpc.ServiceDesc for Wallet service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -170,6 +266,18 @@ var Wallet_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SettleConfirm",
 			Handler:    _Wallet_SettleConfirm_Handler,
+		},
+		{
+			MethodName: "Balance",
+			Handler:    _Wallet_Balance_Handler,
+		},
+		{
+			MethodName: "Deposit",
+			Handler:    _Wallet_Deposit_Handler,
+		},
+		{
+			MethodName: "Withdrawal",
+			Handler:    _Wallet_Withdrawal_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
