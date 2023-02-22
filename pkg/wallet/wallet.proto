@@ -44,25 +44,49 @@ message BalanceReq{
 message BalanceResp{
   uint64 amount = 1;
 }
-message DepositReq{
+message DepositTryReq{
   uint64 playerId = 1;
   uint64 amount = 2;
   string desc = 3;
   int32 type = 4;
 }
-message DepositResp{
- uint32 status=1;
-  uint64 id =2;
+message DepositTryResp{
+  uint32 status = 1;
+  uint64 id = 2;
 }
-message WithdrawalReq{
+message WithdrawalTryReq{
   uint64 playerId = 1;
   uint64 amount = 2;
   string desc = 3;
   int32 type = 4;
 }
-message WithdrawalResp{
+message WithdrawalTryResp{
+  uint32 status = 1;
+  uint64 id = 2;
+}
+message DepositCancelReq{
+  uint64 id=1;
+}
+message DepositCancelResp{
   uint32 status=1;
-  uint64 id =2;
+}
+message DepositConfirmReq{
+  uint64 id=1;
+}
+message DepositConfirmResp{
+  uint32 status=1;
+}
+message WithdrawalCancelReq{
+  uint64 id=1;
+}
+message WithdrawalCancelResp{
+  uint32 status=1;
+}
+message WithdrawalConfirmReq{
+  uint64 id=1;
+}
+message WithdrawalConfirmResp{
+  uint32 status=1;
 }
 
 service Wallet {
@@ -71,7 +95,11 @@ service Wallet {
   rpc SettleConfirm(SettleConfirmReq) returns (SettleConfirmResp);
 
   rpc Balance(BalanceReq) returns(BalanceResp);
-  rpc Deposit(DepositReq) returns(DepositResp);
-  rpc Withdrawal(WithdrawalReq) returns(WithdrawalResp);
+  rpc DepositTry(DepositTryReq) returns(DepositTryResp);
+  rpc DepositCancel(DepositCancelReq) returns(DepositCancelResp);
+  rpc DepositConfirm(DepositConfirmReq) returns(DepositConfirmResp);
+  rpc WithdrawalTry(WithdrawalTryReq) returns(WithdrawalTryResp);
+  rpc WithdrawalCancel(WithdrawalCancelReq) returns(WithdrawalCancelResp);
+  rpc WithdrawalConfirm(WithdrawalConfirmReq) returns(WithdrawalConfirmResp);
 }
 

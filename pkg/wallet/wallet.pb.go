@@ -491,7 +491,7 @@ func (x *BalanceResp) GetAmount() uint64 {
 	return 0
 }
 
-type DepositReq struct {
+type DepositTryReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -502,8 +502,8 @@ type DepositReq struct {
 	Type     int32  `protobuf:"varint,4,opt,name=type,proto3" json:"type,omitempty"`
 }
 
-func (x *DepositReq) Reset() {
-	*x = DepositReq{}
+func (x *DepositTryReq) Reset() {
+	*x = DepositTryReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_wallet_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -511,13 +511,13 @@ func (x *DepositReq) Reset() {
 	}
 }
 
-func (x *DepositReq) String() string {
+func (x *DepositTryReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DepositReq) ProtoMessage() {}
+func (*DepositTryReq) ProtoMessage() {}
 
-func (x *DepositReq) ProtoReflect() protoreflect.Message {
+func (x *DepositTryReq) ProtoReflect() protoreflect.Message {
 	mi := &file_wallet_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -529,40 +529,40 @@ func (x *DepositReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DepositReq.ProtoReflect.Descriptor instead.
-func (*DepositReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use DepositTryReq.ProtoReflect.Descriptor instead.
+func (*DepositTryReq) Descriptor() ([]byte, []int) {
 	return file_wallet_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *DepositReq) GetPlayerId() uint64 {
+func (x *DepositTryReq) GetPlayerId() uint64 {
 	if x != nil {
 		return x.PlayerId
 	}
 	return 0
 }
 
-func (x *DepositReq) GetAmount() uint64 {
+func (x *DepositTryReq) GetAmount() uint64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
 }
 
-func (x *DepositReq) GetDesc() string {
+func (x *DepositTryReq) GetDesc() string {
 	if x != nil {
 		return x.Desc
 	}
 	return ""
 }
 
-func (x *DepositReq) GetType() int32 {
+func (x *DepositTryReq) GetType() int32 {
 	if x != nil {
 		return x.Type
 	}
 	return 0
 }
 
-type DepositResp struct {
+type DepositTryResp struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -571,8 +571,8 @@ type DepositResp struct {
 	Id     uint64 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *DepositResp) Reset() {
-	*x = DepositResp{}
+func (x *DepositTryResp) Reset() {
+	*x = DepositTryResp{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_wallet_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -580,13 +580,13 @@ func (x *DepositResp) Reset() {
 	}
 }
 
-func (x *DepositResp) String() string {
+func (x *DepositTryResp) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DepositResp) ProtoMessage() {}
+func (*DepositTryResp) ProtoMessage() {}
 
-func (x *DepositResp) ProtoReflect() protoreflect.Message {
+func (x *DepositTryResp) ProtoReflect() protoreflect.Message {
 	mi := &file_wallet_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -598,26 +598,26 @@ func (x *DepositResp) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DepositResp.ProtoReflect.Descriptor instead.
-func (*DepositResp) Descriptor() ([]byte, []int) {
+// Deprecated: Use DepositTryResp.ProtoReflect.Descriptor instead.
+func (*DepositTryResp) Descriptor() ([]byte, []int) {
 	return file_wallet_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *DepositResp) GetStatus() uint32 {
+func (x *DepositTryResp) GetStatus() uint32 {
 	if x != nil {
 		return x.Status
 	}
 	return 0
 }
 
-func (x *DepositResp) GetId() uint64 {
+func (x *DepositTryResp) GetId() uint64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type WithdrawalReq struct {
+type WithdrawalTryReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -628,8 +628,8 @@ type WithdrawalReq struct {
 	Type     int32  `protobuf:"varint,4,opt,name=type,proto3" json:"type,omitempty"`
 }
 
-func (x *WithdrawalReq) Reset() {
-	*x = WithdrawalReq{}
+func (x *WithdrawalTryReq) Reset() {
+	*x = WithdrawalTryReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_wallet_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -637,13 +637,13 @@ func (x *WithdrawalReq) Reset() {
 	}
 }
 
-func (x *WithdrawalReq) String() string {
+func (x *WithdrawalTryReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WithdrawalReq) ProtoMessage() {}
+func (*WithdrawalTryReq) ProtoMessage() {}
 
-func (x *WithdrawalReq) ProtoReflect() protoreflect.Message {
+func (x *WithdrawalTryReq) ProtoReflect() protoreflect.Message {
 	mi := &file_wallet_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -655,40 +655,40 @@ func (x *WithdrawalReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WithdrawalReq.ProtoReflect.Descriptor instead.
-func (*WithdrawalReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use WithdrawalTryReq.ProtoReflect.Descriptor instead.
+func (*WithdrawalTryReq) Descriptor() ([]byte, []int) {
 	return file_wallet_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *WithdrawalReq) GetPlayerId() uint64 {
+func (x *WithdrawalTryReq) GetPlayerId() uint64 {
 	if x != nil {
 		return x.PlayerId
 	}
 	return 0
 }
 
-func (x *WithdrawalReq) GetAmount() uint64 {
+func (x *WithdrawalTryReq) GetAmount() uint64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
 }
 
-func (x *WithdrawalReq) GetDesc() string {
+func (x *WithdrawalTryReq) GetDesc() string {
 	if x != nil {
 		return x.Desc
 	}
 	return ""
 }
 
-func (x *WithdrawalReq) GetType() int32 {
+func (x *WithdrawalTryReq) GetType() int32 {
 	if x != nil {
 		return x.Type
 	}
 	return 0
 }
 
-type WithdrawalResp struct {
+type WithdrawalTryResp struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -697,8 +697,8 @@ type WithdrawalResp struct {
 	Id     uint64 `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *WithdrawalResp) Reset() {
-	*x = WithdrawalResp{}
+func (x *WithdrawalTryResp) Reset() {
+	*x = WithdrawalTryResp{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_wallet_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -706,13 +706,13 @@ func (x *WithdrawalResp) Reset() {
 	}
 }
 
-func (x *WithdrawalResp) String() string {
+func (x *WithdrawalTryResp) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*WithdrawalResp) ProtoMessage() {}
+func (*WithdrawalTryResp) ProtoMessage() {}
 
-func (x *WithdrawalResp) ProtoReflect() protoreflect.Message {
+func (x *WithdrawalTryResp) ProtoReflect() protoreflect.Message {
 	mi := &file_wallet_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -724,21 +724,397 @@ func (x *WithdrawalResp) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use WithdrawalResp.ProtoReflect.Descriptor instead.
-func (*WithdrawalResp) Descriptor() ([]byte, []int) {
+// Deprecated: Use WithdrawalTryResp.ProtoReflect.Descriptor instead.
+func (*WithdrawalTryResp) Descriptor() ([]byte, []int) {
 	return file_wallet_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *WithdrawalResp) GetStatus() uint32 {
+func (x *WithdrawalTryResp) GetStatus() uint32 {
 	if x != nil {
 		return x.Status
 	}
 	return 0
 }
 
-func (x *WithdrawalResp) GetId() uint64 {
+func (x *WithdrawalTryResp) GetId() uint64 {
 	if x != nil {
 		return x.Id
+	}
+	return 0
+}
+
+type DepositCancelReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *DepositCancelReq) Reset() {
+	*x = DepositCancelReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DepositCancelReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepositCancelReq) ProtoMessage() {}
+
+func (x *DepositCancelReq) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepositCancelReq.ProtoReflect.Descriptor instead.
+func (*DepositCancelReq) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *DepositCancelReq) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type DepositCancelResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Status uint32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (x *DepositCancelResp) Reset() {
+	*x = DepositCancelResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DepositCancelResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepositCancelResp) ProtoMessage() {}
+
+func (x *DepositCancelResp) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepositCancelResp.ProtoReflect.Descriptor instead.
+func (*DepositCancelResp) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{14}
+}
+
+func (x *DepositCancelResp) GetStatus() uint32 {
+	if x != nil {
+		return x.Status
+	}
+	return 0
+}
+
+type DepositConfirmReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *DepositConfirmReq) Reset() {
+	*x = DepositConfirmReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DepositConfirmReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepositConfirmReq) ProtoMessage() {}
+
+func (x *DepositConfirmReq) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepositConfirmReq.ProtoReflect.Descriptor instead.
+func (*DepositConfirmReq) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *DepositConfirmReq) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type DepositConfirmResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Status uint32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (x *DepositConfirmResp) Reset() {
+	*x = DepositConfirmResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DepositConfirmResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DepositConfirmResp) ProtoMessage() {}
+
+func (x *DepositConfirmResp) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DepositConfirmResp.ProtoReflect.Descriptor instead.
+func (*DepositConfirmResp) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *DepositConfirmResp) GetStatus() uint32 {
+	if x != nil {
+		return x.Status
+	}
+	return 0
+}
+
+type WithdrawalCancelReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *WithdrawalCancelReq) Reset() {
+	*x = WithdrawalCancelReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[17]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalCancelReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalCancelReq) ProtoMessage() {}
+
+func (x *WithdrawalCancelReq) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[17]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalCancelReq.ProtoReflect.Descriptor instead.
+func (*WithdrawalCancelReq) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{17}
+}
+
+func (x *WithdrawalCancelReq) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type WithdrawalCancelResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Status uint32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (x *WithdrawalCancelResp) Reset() {
+	*x = WithdrawalCancelResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[18]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalCancelResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalCancelResp) ProtoMessage() {}
+
+func (x *WithdrawalCancelResp) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[18]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalCancelResp.ProtoReflect.Descriptor instead.
+func (*WithdrawalCancelResp) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{18}
+}
+
+func (x *WithdrawalCancelResp) GetStatus() uint32 {
+	if x != nil {
+		return x.Status
+	}
+	return 0
+}
+
+type WithdrawalConfirmReq struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *WithdrawalConfirmReq) Reset() {
+	*x = WithdrawalConfirmReq{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[19]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalConfirmReq) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalConfirmReq) ProtoMessage() {}
+
+func (x *WithdrawalConfirmReq) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[19]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalConfirmReq.ProtoReflect.Descriptor instead.
+func (*WithdrawalConfirmReq) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{19}
+}
+
+func (x *WithdrawalConfirmReq) GetId() uint64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type WithdrawalConfirmResp struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Status uint32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (x *WithdrawalConfirmResp) Reset() {
+	*x = WithdrawalConfirmResp{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_wallet_proto_msgTypes[20]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *WithdrawalConfirmResp) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*WithdrawalConfirmResp) ProtoMessage() {}
+
+func (x *WithdrawalConfirmResp) ProtoReflect() protoreflect.Message {
+	mi := &file_wallet_proto_msgTypes[20]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use WithdrawalConfirmResp.ProtoReflect.Descriptor instead.
+func (*WithdrawalConfirmResp) Descriptor() ([]byte, []int) {
+	return file_wallet_proto_rawDescGZIP(), []int{20}
+}
+
+func (x *WithdrawalConfirmResp) GetStatus() uint32 {
+	if x != nil {
+		return x.Status
 	}
 	return 0
 }
@@ -779,28 +1155,50 @@ var file_wallet_proto_rawDesc = []byte{
 	0x65, 0x72, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x70, 0x6c, 0x61, 0x79,
 	0x65, 0x72, 0x49, 0x64, 0x22, 0x25, 0x0a, 0x0b, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52,
 	0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0x68, 0x0a, 0x0a, 0x44,
-	0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x6c, 0x61,
-	0x79, 0x65, 0x72, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x70, 0x6c, 0x61,
-	0x79, 0x65, 0x72, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x12, 0x0a,
-	0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73,
-	0x63, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52,
-	0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x35, 0x0a, 0x0b, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x6b, 0x0a, 0x0d,
-	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a,
-	0x08, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
-	0x08, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f,
-	0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e,
-	0x74, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20,
-	0x01, 0x28, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x38, 0x0a, 0x0e, 0x57, 0x69, 0x74,
-	0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73,
+	0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0x6b, 0x0a, 0x0d, 0x44,
+	0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x54, 0x72, 0x79, 0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a, 0x08,
+	0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08,
+	0x70, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75,
+	0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74,
+	0x12, 0x12, 0x0a, 0x04, 0x64, 0x65, 0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x64, 0x65, 0x73, 0x63, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x05, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x38, 0x0a, 0x0e, 0x44, 0x65, 0x70, 0x6f,
+	0x73, 0x69, 0x74, 0x54, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74,
+	0x75, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02,
+	0x69, 0x64, 0x22, 0x6e, 0x0a, 0x10, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c,
+	0x54, 0x72, 0x79, 0x52, 0x65, 0x71, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72,
+	0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x70, 0x6c, 0x61, 0x79, 0x65, 0x72,
+	0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x65,
+	0x73, 0x63, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x65, 0x73, 0x63, 0x12, 0x12,
+	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x05, 0x52, 0x04, 0x74, 0x79,
+	0x70, 0x65, 0x22, 0x3b, 0x0a, 0x11, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c,
+	0x54, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12,
+	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22,
+	0x22, 0x0a, 0x10, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c,
+	0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52,
+	0x02, 0x69, 0x64, 0x22, 0x2b, 0x0a, 0x11, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x43, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74,
+	0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73,
+	0x22, 0x23, 0x0a, 0x11, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x43, 0x6f, 0x6e, 0x66, 0x69,
+	0x72, 0x6d, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2c, 0x0a, 0x12, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73,
 	0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52,
-	0x02, 0x69, 0x64, 0x32, 0xed, 0x02, 0x0a, 0x06, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x12, 0x35,
+	0x74, 0x75, 0x73, 0x22, 0x25, 0x0a, 0x13, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61,
+	0x6c, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2e, 0x0a, 0x14, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65,
+	0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x26, 0x0a, 0x14, 0x57, 0x69,
+	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x52,
+	0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02,
+	0x69, 0x64, 0x22, 0x2f, 0x0a, 0x15, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x12, 0x16, 0x0a, 0x06, 0x73,
+	0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x06, 0x73, 0x74, 0x61,
+	0x74, 0x75, 0x73, 0x32, 0xaf, 0x05, 0x0a, 0x06, 0x57, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x12, 0x35,
 	0x0a, 0x0c, 0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x12, 0x11,
 	0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x53, 0x65, 0x74, 0x74, 0x6c, 0x65, 0x52, 0x65,
 	0x71, 0x1a, 0x12, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x53, 0x65, 0x74, 0x74, 0x6c,
@@ -816,15 +1214,35 @@ var file_wallet_proto_rawDesc = []byte{
 	0x0a, 0x07, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x12, 0x2e, 0x77, 0x61, 0x6c, 0x6c,
 	0x65, 0x74, 0x2e, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x13, 0x2e,
 	0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x52, 0x65,
-	0x73, 0x70, 0x12, 0x32, 0x0a, 0x07, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x12, 0x12, 0x2e,
-	0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x52, 0x65,
-	0x71, 0x1a, 0x13, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73,
-	0x69, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x3b, 0x0a, 0x0a, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72,
-	0x61, 0x77, 0x61, 0x6c, 0x12, 0x15, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x57, 0x69,
-	0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x52, 0x65, 0x71, 0x1a, 0x16, 0x2e, 0x77, 0x61,
-	0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x52,
-	0x65, 0x73, 0x70, 0x42, 0x0a, 0x5a, 0x08, 0x2e, 0x3b, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x70, 0x12, 0x3b, 0x0a, 0x0a, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x54, 0x72, 0x79,
+	0x12, 0x15, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x54, 0x72, 0x79, 0x52, 0x65, 0x71, 0x1a, 0x16, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74,
+	0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x54, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x12,
+	0x44, 0x0a, 0x0d, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c,
+	0x12, 0x18, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69,
+	0x74, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52, 0x65, 0x71, 0x1a, 0x19, 0x2e, 0x77, 0x61, 0x6c,
+	0x6c, 0x65, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x43, 0x61, 0x6e, 0x63, 0x65,
+	0x6c, 0x52, 0x65, 0x73, 0x70, 0x12, 0x47, 0x0a, 0x0e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74,
+	0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x12, 0x19, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74,
+	0x2e, 0x44, 0x65, 0x70, 0x6f, 0x73, 0x69, 0x74, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x52,
+	0x65, 0x71, 0x1a, 0x1a, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x44, 0x65, 0x70, 0x6f,
+	0x73, 0x69, 0x74, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x12, 0x44,
+	0x0a, 0x0d, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x54, 0x72, 0x79, 0x12,
+	0x18, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61,
+	0x77, 0x61, 0x6c, 0x54, 0x72, 0x79, 0x52, 0x65, 0x71, 0x1a, 0x19, 0x2e, 0x77, 0x61, 0x6c, 0x6c,
+	0x65, 0x74, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x54, 0x72, 0x79,
+	0x52, 0x65, 0x73, 0x70, 0x12, 0x4d, 0x0a, 0x10, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77,
+	0x61, 0x6c, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x12, 0x1b, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65,
+	0x74, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x43, 0x61, 0x6e, 0x63,
+	0x65, 0x6c, 0x52, 0x65, 0x71, 0x1a, 0x1c, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e, 0x57,
+	0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x52,
+	0x65, 0x73, 0x70, 0x12, 0x50, 0x0a, 0x11, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61,
+	0x6c, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72, 0x6d, 0x12, 0x1c, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65,
+	0x74, 0x2e, 0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x43, 0x6f, 0x6e, 0x66,
+	0x69, 0x72, 0x6d, 0x52, 0x65, 0x71, 0x1a, 0x1d, 0x2e, 0x77, 0x61, 0x6c, 0x6c, 0x65, 0x74, 0x2e,
+	0x57, 0x69, 0x74, 0x68, 0x64, 0x72, 0x61, 0x77, 0x61, 0x6c, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x72,
+	0x6d, 0x52, 0x65, 0x73, 0x70, 0x42, 0x0a, 0x5a, 0x08, 0x2e, 0x3b, 0x77, 0x61, 0x6c, 0x6c, 0x65,
+	0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -839,21 +1257,29 @@ func file_wallet_proto_rawDescGZIP() []byte {
 	return file_wallet_proto_rawDescData
 }
 
-var file_wallet_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_wallet_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_wallet_proto_goTypes = []interface{}{
-	(*SettleData)(nil),        // 0: wallet.SettleData
-	(*SettleReq)(nil),         // 1: wallet.SettleReq
-	(*SettleResp)(nil),        // 2: wallet.SettleResp
-	(*SettleCancelReq)(nil),   // 3: wallet.SettleCancelReq
-	(*SettleCancelResp)(nil),  // 4: wallet.SettleCancelResp
-	(*SettleConfirmReq)(nil),  // 5: wallet.SettleConfirmReq
-	(*SettleConfirmResp)(nil), // 6: wallet.SettleConfirmResp
-	(*BalanceReq)(nil),        // 7: wallet.BalanceReq
-	(*BalanceResp)(nil),       // 8: wallet.BalanceResp
-	(*DepositReq)(nil),        // 9: wallet.DepositReq
-	(*DepositResp)(nil),       // 10: wallet.DepositResp
-	(*WithdrawalReq)(nil),     // 11: wallet.WithdrawalReq
-	(*WithdrawalResp)(nil),    // 12: wallet.WithdrawalResp
+	(*SettleData)(nil),            // 0: wallet.SettleData
+	(*SettleReq)(nil),             // 1: wallet.SettleReq
+	(*SettleResp)(nil),            // 2: wallet.SettleResp
+	(*SettleCancelReq)(nil),       // 3: wallet.SettleCancelReq
+	(*SettleCancelResp)(nil),      // 4: wallet.SettleCancelResp
+	(*SettleConfirmReq)(nil),      // 5: wallet.SettleConfirmReq
+	(*SettleConfirmResp)(nil),     // 6: wallet.SettleConfirmResp
+	(*BalanceReq)(nil),            // 7: wallet.BalanceReq
+	(*BalanceResp)(nil),           // 8: wallet.BalanceResp
+	(*DepositTryReq)(nil),         // 9: wallet.DepositTryReq
+	(*DepositTryResp)(nil),        // 10: wallet.DepositTryResp
+	(*WithdrawalTryReq)(nil),      // 11: wallet.WithdrawalTryReq
+	(*WithdrawalTryResp)(nil),     // 12: wallet.WithdrawalTryResp
+	(*DepositCancelReq)(nil),      // 13: wallet.DepositCancelReq
+	(*DepositCancelResp)(nil),     // 14: wallet.DepositCancelResp
+	(*DepositConfirmReq)(nil),     // 15: wallet.DepositConfirmReq
+	(*DepositConfirmResp)(nil),    // 16: wallet.DepositConfirmResp
+	(*WithdrawalCancelReq)(nil),   // 17: wallet.WithdrawalCancelReq
+	(*WithdrawalCancelResp)(nil),  // 18: wallet.WithdrawalCancelResp
+	(*WithdrawalConfirmReq)(nil),  // 19: wallet.WithdrawalConfirmReq
+	(*WithdrawalConfirmResp)(nil), // 20: wallet.WithdrawalConfirmResp
 }
 var file_wallet_proto_depIdxs = []int32{
 	0,  // 0: wallet.SettleReq.datas:type_name -> wallet.SettleData
@@ -861,16 +1287,24 @@ var file_wallet_proto_depIdxs = []int32{
 	3,  // 2: wallet.Wallet.SettleCancel:input_type -> wallet.SettleCancelReq
 	5,  // 3: wallet.Wallet.SettleConfirm:input_type -> wallet.SettleConfirmReq
 	7,  // 4: wallet.Wallet.Balance:input_type -> wallet.BalanceReq
-	9,  // 5: wallet.Wallet.Deposit:input_type -> wallet.DepositReq
-	11, // 6: wallet.Wallet.Withdrawal:input_type -> wallet.WithdrawalReq
-	2,  // 7: wallet.Wallet.SettleHandle:output_type -> wallet.SettleResp
-	4,  // 8: wallet.Wallet.SettleCancel:output_type -> wallet.SettleCancelResp
-	6,  // 9: wallet.Wallet.SettleConfirm:output_type -> wallet.SettleConfirmResp
-	8,  // 10: wallet.Wallet.Balance:output_type -> wallet.BalanceResp
-	10, // 11: wallet.Wallet.Deposit:output_type -> wallet.DepositResp
-	12, // 12: wallet.Wallet.Withdrawal:output_type -> wallet.WithdrawalResp
-	7,  // [7:13] is the sub-list for method output_type
-	1,  // [1:7] is the sub-list for method input_type
+	9,  // 5: wallet.Wallet.DepositTry:input_type -> wallet.DepositTryReq
+	13, // 6: wallet.Wallet.DepositCancel:input_type -> wallet.DepositCancelReq
+	15, // 7: wallet.Wallet.DepositConfirm:input_type -> wallet.DepositConfirmReq
+	11, // 8: wallet.Wallet.WithdrawalTry:input_type -> wallet.WithdrawalTryReq
+	17, // 9: wallet.Wallet.WithdrawalCancel:input_type -> wallet.WithdrawalCancelReq
+	19, // 10: wallet.Wallet.WithdrawalConfirm:input_type -> wallet.WithdrawalConfirmReq
+	2,  // 11: wallet.Wallet.SettleHandle:output_type -> wallet.SettleResp
+	4,  // 12: wallet.Wallet.SettleCancel:output_type -> wallet.SettleCancelResp
+	6,  // 13: wallet.Wallet.SettleConfirm:output_type -> wallet.SettleConfirmResp
+	8,  // 14: wallet.Wallet.Balance:output_type -> wallet.BalanceResp
+	10, // 15: wallet.Wallet.DepositTry:output_type -> wallet.DepositTryResp
+	14, // 16: wallet.Wallet.DepositCancel:output_type -> wallet.DepositCancelResp
+	16, // 17: wallet.Wallet.DepositConfirm:output_type -> wallet.DepositConfirmResp
+	12, // 18: wallet.Wallet.WithdrawalTry:output_type -> wallet.WithdrawalTryResp
+	18, // 19: wallet.Wallet.WithdrawalCancel:output_type -> wallet.WithdrawalCancelResp
+	20, // 20: wallet.Wallet.WithdrawalConfirm:output_type -> wallet.WithdrawalConfirmResp
+	11, // [11:21] is the sub-list for method output_type
+	1,  // [1:11] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
 	1,  // [1:1] is the sub-list for extension extendee
 	0,  // [0:1] is the sub-list for field type_name
@@ -991,7 +1425,7 @@ func file_wallet_proto_init() {
 			}
 		}
 		file_wallet_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DepositReq); i {
+			switch v := v.(*DepositTryReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1003,7 +1437,7 @@ func file_wallet_proto_init() {
 			}
 		}
 		file_wallet_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DepositResp); i {
+			switch v := v.(*DepositTryResp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1015,7 +1449,7 @@ func file_wallet_proto_init() {
 			}
 		}
 		file_wallet_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WithdrawalReq); i {
+			switch v := v.(*WithdrawalTryReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1027,7 +1461,103 @@ func file_wallet_proto_init() {
 			}
 		}
 		file_wallet_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*WithdrawalResp); i {
+			switch v := v.(*WithdrawalTryResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DepositCancelReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DepositCancelResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DepositConfirmReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DepositConfirmResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawalCancelReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawalCancelResp); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawalConfirmReq); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_wallet_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*WithdrawalConfirmResp); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1045,7 +1575,7 @@ func file_wallet_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_wallet_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   13,
+			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
