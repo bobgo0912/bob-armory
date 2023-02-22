@@ -52,6 +52,7 @@ message DepositReq{
 }
 message DepositResp{
  uint32 status=1;
+  uint64 id =2;
 }
 message WithdrawalReq{
   uint64 playerId = 1;
@@ -61,6 +62,7 @@ message WithdrawalReq{
 }
 message WithdrawalResp{
   uint32 status=1;
+  uint64 id =2;
 }
 
 service Wallet {
